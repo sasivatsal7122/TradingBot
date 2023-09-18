@@ -1,0 +1,40 @@
+---------------------------------
+Simple Moving Average (SMA)
+
+window - 50
+day - True
+week - True
+month - False
+
+window - 200
+day - True
+week - False
+month - False
+
+---------------------------------
+Exponential Moving Average (EMA)
+
+window - 3
+day - True
+week - True
+month - True
+
+window - 9
+day - True
+week - True
+month - True
+
+---------------------------------
+Moving Average Convergence/Divergence (MACD)
+
+day - True
+week - True
+month - False
+
+---------------------------------
+Relative Strength Index (RSI)
+
+day - True
+week - True
+month - True
+
