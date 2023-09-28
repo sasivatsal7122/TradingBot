@@ -7,6 +7,11 @@ config = configparser.ConfigParser()
 config.read('config.ini')
 
 API_KEY = config['Data']['API_KEY']
+API_KEY1 = config['Data']['API_KEY1']
+API_KEY2 = config['Data']['API_KEY2']
+API_KEY3 = config['Data']['API_KEY3']
+API_KEY4 = config['Data']['API_KEY4']
+API_KEY5 = config['Data']['API_KEY5']
 
 def getOpenandClose(stockTicker):
     current_date = datetime.now()
@@ -24,13 +29,11 @@ class getSMA:
         self.stockTicker = stockTicker
         
     def getDay(self,window):
-        API_KEY = "LI_lAroXL81Z_SWp_IDSJi9yKH44PpnI"
-        URL = f"https://api.polygon.io/v1/indicators/sma/{self.stockTicker}?timespan=day&adjusted=true&window={window}&series_type=close&order=desc&apiKey={API_KEY}"
+        URL = f"https://api.polygon.io/v1/indicators/sma/{self.stockTicker}?timespan=day&adjusted=true&window={window}&series_type=close&order=desc&apiKey={API_KEY1}"
         res = requests.get(URL)
         return res.json()['results']['values']
     def getWeek(self,window):
-        API_KEY = "LI_lAroXL81Z_SWp_IDSJi9yKH44PpnI"
-        URL = f"https://api.polygon.io/v1/indicators/sma/{self.stockTicker}?timespan=week&adjusted=true&window={window}&series_type=close&order=desc&apiKey={API_KEY}"
+        URL = f"https://api.polygon.io/v1/indicators/sma/{self.stockTicker}?timespan=week&adjusted=true&window={window}&series_type=close&order=desc&apiKey={API_KEY1}"
         res = requests.get(URL)
         return res.json()['results']['values']
 
@@ -39,18 +42,15 @@ class getEMA:
         self.stockTicker = stockTicker
         
     def getDay(self,window):
-        API_KEY = "8k0uhYwagVcIMk8LXKXHFkE9u28i5Y4O"
-        URL = f"https://api.polygon.io/v1/indicators/ema/{self.stockTicker}?timespan=day&adjusted=true&window={window}&series_type=close&order=desc&apiKey={API_KEY}"
+        URL = f"https://api.polygon.io/v1/indicators/ema/{self.stockTicker}?timespan=day&adjusted=true&window={window}&series_type=close&order=desc&apiKey={API_KEY2}"
         res = requests.get(URL)
         return res.json()['results']['values']
     def getWeek(self,window):
-        API_KEY = "8k0uhYwagVcIMk8LXKXHFkE9u28i5Y4O"
-        URL = f"https://api.polygon.io/v1/indicators/ema/{self.stockTicker}?timespan=week&adjusted=true&window={window}&series_type=close&order=desc&apiKey={API_KEY}"
+        URL = f"https://api.polygon.io/v1/indicators/ema/{self.stockTicker}?timespan=week&adjusted=true&window={window}&series_type=close&order=desc&apiKey={API_KEY2}"
         res = requests.get(URL)
         return res.json()['results']['values']
     def getMonth(self,window):
-        API_KEY = "lKIVjUkr2IQlRHx6Fx1Im9XDZt9KGgHR"
-        URL = f"https://api.polygon.io/v1/indicators/ema/{self.stockTicker}?timespan=month&adjusted=true&window={window}&series_type=close&order=desc&apiKey={API_KEY}"
+        URL = f"https://api.polygon.io/v1/indicators/ema/{self.stockTicker}?timespan=month&adjusted=true&window={window}&series_type=close&order=desc&apiKey={API_KEY3}"
         res = requests.get(URL)
         return res.json()['results']['values']
 
@@ -59,13 +59,11 @@ class getMACD:
         self.stockTicker = stockTicker
         
     def getDay(self):
-        API_KEY = "FWidqlKN865kFjWOSYItya1waflUyT9u"
-        URL = f"https://api.polygon.io/v1/indicators/macd/{self.stockTicker}?timespan=day&adjusted=true&short_window=12&long_window=26&signal_window=9&series_type=close&order=desc&apiKey={API_KEY}"
+        URL = f"https://api.polygon.io/v1/indicators/macd/{self.stockTicker}?timespan=day&adjusted=true&short_window=12&long_window=26&signal_window=9&series_type=close&order=desc&apiKey={API_KEY4}"
         res = requests.get(URL)
         return res.json()['results']['values']
     def getWeek(self):
-        API_KEY = "FWidqlKN865kFjWOSYItya1waflUyT9u"
-        URL = f"https://api.polygon.io/v1/indicators/macd/{self.stockTicker}?timespan=week&adjusted=true&short_window=12&long_window=26&signal_window=9&series_type=close&order=desc&apiKey={API_KEY}"
+        URL = f"https://api.polygon.io/v1/indicators/macd/{self.stockTicker}?timespan=week&adjusted=true&short_window=12&long_window=26&signal_window=9&series_type=close&order=desc&apiKey={API_KEY4}"
         res = requests.get(URL)
         return res.json()['results']['values']
 
@@ -74,18 +72,15 @@ class getRSI:
         self.stockTicker = stockTicker
         
     def getDay(self):
-        API_KEY = "fCwZmWrpFwQY66uKlfqXXAhBwXo00Vzk"
-        URL = f"https://api.polygon.io/v1/indicators/rsi/{self.stockTicker}?timespan=day&adjusted=true&window=14&series_type=close&order=desc&apiKey={API_KEY}"
+        URL = f"https://api.polygon.io/v1/indicators/rsi/{self.stockTicker}?timespan=day&adjusted=true&window=14&series_type=close&order=desc&apiKey={API_KEY5}"
         res = requests.get(URL)
         return res.json()['results']['values']
     def getWeek(self):
-        API_KEY = "fCwZmWrpFwQY66uKlfqXXAhBwXo00Vzk"
-        URL = f"https://api.polygon.io/v1/indicators/rsi/{self.stockTicker}?timespan=week&adjusted=true&window=14&series_type=close&order=desc&apiKey={API_KEY}"
+        URL = f"https://api.polygon.io/v1/indicators/rsi/{self.stockTicker}?timespan=week&adjusted=true&window=14&series_type=close&order=desc&apiKey={API_KEY5}"
         res = requests.get(URL)
         return res.json()['results']['values']
     def getMonth(self):
-        API_KEY = "fCwZmWrpFwQY66uKlfqXXAhBwXo00Vzk"
-        URL = f"https://api.polygon.io/v1/indicators/rsi/{self.stockTicker}?timespan=month&adjusted=true&window=14&series_type=close&order=desc&apiKey={API_KEY}"
+        URL = f"https://api.polygon.io/v1/indicators/rsi/{self.stockTicker}?timespan=month&adjusted=true&window=14&series_type=close&order=desc&apiKey={API_KEY5}"
         res = requests.get(URL)
         return res.json()['results']['values']
 
