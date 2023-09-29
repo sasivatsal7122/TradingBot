@@ -126,7 +126,11 @@ if __name__=="__main__":
     print("Finished Saving Data....")
     # print(MASTER_DATA)
     print(f"\n=========== Trade Summary ===========\n")
-    print(MASTER_DATA[stockerTicker]["open_close"]["symbol"])
+    try:
+        print(MASTER_DATA[stockerTicker]["open_close"]["symbol"])
+    except:
+        print("Reached max limit of request per minute try after 1 minute")
+        raise
     print(f'Price: {MASTER_DATA[stockerTicker]["open_close"]["close"]}')
     Price = MASTER_DATA[stockerTicker]["open_close"]["close"]
     GrowthPerc2 = Perc(Price, 2.5)
